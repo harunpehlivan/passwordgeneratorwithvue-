@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Password Generator with Vue</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <div class="wrapper">
+    <article class="passbox">
+      <header>
+        <h1>Select options</h1>
+      </header>
+      <section>
+        <div class="slidecontainer">
+          <label for="passRange" >length: {{ passwordLength }}</label>
+          <input type="range" min="8" max="24" v-model="passwordLength" class="slider" id="passRange">
+        </div>
+        <div class="options">
+          <label class="container" v-for="(option, index) in optiondata" :key="index">
+            {{ option.name }}
+            <input type="checkbox" v-model="option.status">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </section>
+      <footer>
+        <div class="password">{{ generatedPassword }}</div>
+        <button class="btn-refresh" @click="refreshPassword = !refreshPassword">refresh</button>
+      </footer>
+    </article>
+  </div>
+  <!-- Youtube Link -->
+  <a id="yt_link" target="_blank" href="https://harunpehlivacryptologycenter.harunpehlivanitdew.repl.co/">HP CRYPTOLOGY </a>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
